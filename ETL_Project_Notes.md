@@ -1,7 +1,10 @@
 Found data
-    -
-    -
-    -
+
+Data Sources:
+
+https://www.kaggle.com/openfoodfacts/world-food-facts
+
+https://www.kaggle.com/dorbicycle/world-foodfeed-production
 
 imported food into pandas
 imported production into pandas
@@ -12,3 +15,4 @@ mysql workbench table wizard creator added \n and " " (space) characters to crea
 
 https://stackoverflow.com/questions/10563619/error-code-2013-lost-connection-to-mysql-server-during-query
 massive join kept timing out mySQL workbench - trying with changing read time out to 6000
+

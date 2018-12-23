@@ -62,3 +62,23 @@ map_list = [Oil, Grain, Spice, Plant, Fruit, Seafood, Seed_Nut, Alcohol, Dry_Goo
 
 list_of_strings = ['Oil_String', 'Grain_String', 'Spice_String', 'Plant_String', 'Fruit_String', 'Seafood_String', 'Seed_Nut_String', 'Alcohol_String', 'Dry Goods_String', 'Meat_String', 'Dairy_String', 'Sweet_String', 'Infant_String', 'Other_String', 'Vegetable_String', 'Palm_String', 'Soy_String', 'Coconut_String']
 string_list = [Oil_String, Grain_String, Spice_String, Plant_String, Fruit_String, Seafood_String, Seed_Nut_String, Alcohol_String, Dry_Goods_String, Meat_String, Dairy_String, Sweet_String, Infant_String, Other_String, Vegetable_String, Palm_String, Soy_String, Coconut]
+
+
+Oil_String = 'Oilcrops, Oil'
+Grain_String = 'Pulse, Cereal, Rice, Barley, Oat, Maize, Bean, Rye, Millet, Sorghum, Wheat, Lentil, Lentil' 
+Spice_String = 'Pepper, Cloves, Spice'
+Plant_String = 'Cassava, Root, Plant, Yam, Plantain,  potatoes, potato, Onions'
+Fruit_String = 'Date, Banana, Pineapple, Grape, Lemon, Lime, Fruits, Apples, Olives, Fruit, Grapefruit, Orange, Mandarin, Citrus' 
+Seafood_String = 'Cephalopod, Squid, Cuttlefish, Octopus, Aquatic, Crustacean, Crab, Shrimp, Langoustine, Lobster, Sea, Fish, Pelagic, Molluscs, Clam, Oyster, Mussel, Marine, Seafood, Shellfish, Freshwater'
+Seed_Nut_String = 'Seed, Nut, Cottonseed, Rapeseed, Mustardseed, Sunflower, Sesame, Groundnut, Peanut, Treenut, Almond, Walnut, Pecan, Cashew, Macadamia, Brazil' 
+Alcohol_String = 'Alcohol, Alcoholic, Beer, Wine, Vodka, Whiskey, Rum, Cider'
+Dry_Goods_String = 'Cocoa, Coffee, Tea, Mate'
+Meat_String = 'Poultry, Chicken, Turkey, Mutton, Goat, Lamb, Pigmeat, Pig, Pork, Bovine, Cow, Beef, Offal, Meat, Egg, Animal, Fat' 
+Dairy_String = 'Cream, Butter, Ghee, Milk, Butter'
+Sweet_String = 'Cane, Honey, Sugar, Sweet, Sweeteners, Candy, Choco'
+Infant_String = 'Infant food'
+Other_String = 'Miscellaneous'
+Vegetable_String = 'Pimento, Vegetables, Tomatoes, Pea, Vegetable, Cabbage, Broccoli, Cauliflower, Kale, Sprout, Cruciferous, Cucumber'
+Palm_String = 'Palm'
+Soy_String = 'Soy'
+Coconut_String = 'Coconut, Copra'

@@ -1,3 +1,36 @@
+/* query used to create joined food tables */
+
+create database food_data;
+use food_data;
+select ofd_clean_norm_df.*, ofd_clean_norm_df.`OFD_ID`, `Area Abbreviation`, `Area Code`, `Area`, `Item Code`, `FAO_Category`, `Element Code`,
+ `Element`, `Unit`, `latitude`, `longitude`, `Y1961`, `Y1962`, `Y1963`, `Y1964`, `Y1965`, `Y1966`, `Y1967`, `Y1968`, `Y1969`, `Y1970`, `Y1971`,
+ `Y1972`, `Y1973`, `Y1974`, `Y1975`, `Y1976`, `Y1977`, `Y1978`, `Y1979`, `Y1980`, `Y1981`, `Y1982`, `Y1983`, `Y1984`, `Y1985`, `Y1986`, `Y1987`,
+ `Y1988`, `Y1989`, `Y1990`, `Y1991`, `Y1992`, `Y1993`, `Y1994`, `Y1995`, `Y1996`, `Y1997`, `Y1998`, `Y1999`, `Y2000`, `Y2001`, `Y2002`, `Y2003`,
+ `Y2004`, `Y2005`, `Y2006`, `Y2007`, `Y2008`, `Y2009`, `Y2010`, `Y2011`, `Y2012`, `Y2013`, `normalized_category`
+from ofd_clean_norm_df
+join fao_norm_df using(normalized_category);
+
+
+drop table fao_ofd_df;
+create table fao_ofd_df as
+select `created_t`, `url`, `creator`, `created_datetime`, `code`, `countries_en`, `countries_tags`, `countries`, `product_name`, `brands`, 
+	   `brands_tags`, `energy_100g`, `proteins_100g`, `salt_100g`, `sodium_100g`, `ingredients_that_may_be_from_palm_oil_n`, `ingredients_from_palm_oil_n`, 
+       `fat_100g`, `sugars_100g`, `carbohydrates_100g`, `saturated-fat_100g`, `nutrition-score-fr_100g`, `nutrition_grade_fr`, `nutrition-score-uk_100g`, 
+       `fiber_100g`, `serving_size`, `additives_tags`, `cholesterol_100g`, `trans-fat_100g`, `calcium_100g`, `vitamin-c_100g`, `iron_100g`, `vitamin-a_100g`, 
+       `pnns_groups_2`, `pnns_groups_1`, `quantity`, `categories_tags`, `main_category_en`, `main_category`, `categories`, `categories_en`, `packaging_tags`, 
+       `packaging`, `image_url`, `image_small_url`, `purchase_places`, `labels_en`, `labels`, `labels_tags`, `generic_name`, `stores`, `manufacturing_places`, 
+       `manufacturing_places_tags`, `allergens`, `OFD_ID`, `OFD_Category`, `FAO_ID`, `Area Abbreviation`, `Area Code`, 
+       `Area`, `Item Code`, `FAO_Category`, `Element Code`, `Element`, `Unit`, `latitude`, `longitude`, `Y1961`, `Y1962`, `Y1963`, `Y1964`, `Y1965`, `Y1966`, 
+       `Y1967`, `Y1968`, `Y1969`, `Y1970`, `Y1971`, `Y1972`, `Y1973`, `Y1974`, `Y1975`, `Y1976`, `Y1977`, `Y1978`, `Y1979`, `Y1980`, `Y1981`, `Y1982`, `Y1983`, 
+       `Y1984`, `Y1985`, `Y1986`, `Y1987`, `Y1988`, `Y1989`, `Y1990`, `Y1991`, `Y1992`, `Y1993`, `Y1994`, `Y1995`, `Y1996`, `Y1997`, `Y1998`, `Y1999`, `Y2000`, 
+       `Y2001`, `Y2002`, `Y2003`, `Y2004`, `Y2005`, `Y2006`, `Y2007`, `Y2008`, `Y2009`, `Y2010`, `Y2011`, `Y2012`, `Y2013`, fao_norm_df.`normalized_category`
+from ofd_clean_norm_df
+join fao_norm_df on ofd_clean_norm_df.normalized_category = fao_norm_df.normalized_category
+limit 1000;
+
+/* queries used to work with brazil e-commerce data which turned out to be a dead end because of limited food-related categories in data */
+
+
 SET SQL_SAFE_UPDATES = 0;
 use brazil_e_commerce;
 
@@ -81,3 +114,6 @@ from olist_products_dataset
 ) olist_geolocation_dataset on olist_customers_dataset.customer_zip_code_prefix = olist_geolocation_dataset.geolocation_zip_code_prefix;
 
 select * from product_info;
+
+
+INTO LOCAL OUTFILE '/var/lib/mysql-files/orders.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
